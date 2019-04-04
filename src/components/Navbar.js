@@ -9,9 +9,12 @@ class Navbar extends Component {
             <a className='btn navbar-link' href='/'>
               <b>Afterimage</b>
             </a>
-            <div>
-              <a className='btn navbar-link' href='/movies'>Rate a movie</a>
-            </div>
+            <a className='btn navbar-link' href='/movies'>Rate a movie</a>
+            <a className='btn navbar-link' href='/profile'>Profile</a>
+          </div>
+          <div className='navbar-block navbar-right'>
+            <a className='btn navbar-link' href='/signup'>Sign up</a>
+            <a className='btn navbar-link' href='/signin'>Sign in</a>
           </div>
         </div>
       </div>
