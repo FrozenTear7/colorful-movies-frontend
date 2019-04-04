@@ -19,6 +19,8 @@ export const fetchWithToken = (data) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'userid': '48',
     },
     body: JSON.stringify(data),
   })
