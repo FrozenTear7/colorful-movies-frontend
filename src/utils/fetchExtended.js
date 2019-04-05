@@ -12,16 +12,15 @@ export const fetchWithApiKey = (params) => {
   })
 }
 
-export const fetchWithToken = (data) => {
+export const fetchWithToken = (options) => {
   let url = new URL('http://localhost:3001/movies')
 
   return fetch(url, {
-    method: 'POST',
+    ...options,
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
-      'userid': '48',
+      'userid': '0',
     },
-    body: JSON.stringify(data),
   })
 }

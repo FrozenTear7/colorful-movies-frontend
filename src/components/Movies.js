@@ -55,17 +55,15 @@ class Movies extends Component {
 
   addToList (id) {
     this.setState({addToList: {...this.state.addToList, loading: true, error: null, imdbID: id}}, () => {
-      fetchWithToken(this.state.movies.list.find(movie => movie.imdbID === id))
+      fetchWithToken({method: 'POST', body: JSON.stringify(this.state.movies.list.find(movie => movie.imdbID === id))})
         .then(response => {
           return response.json()
         })
         .then(responseJson => {
-          console.log(responseJson)
           if (responseJson.status === 500)
             throw responseJson.error
         })
         .catch(error => {
-          console.log(error)
           this.setState({addToList: {...this.state.addToList, error: error}})
         })
         .finally(() => {
