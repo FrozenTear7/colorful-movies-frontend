@@ -6,13 +6,15 @@ import NotFound from './NotFound'
 import Profile from './Profile'
 import SignUp from './SignUp'
 import SignIn from './SignIn'
+import Movie from './Movie'
 
 class Main extends Component {
   render () {
     return (
       <Switch>
         <Route exact path='/' component={Panel}/>
-        <Route path='/movies' component={Movies}/>
+        <Route exact path='/movies' component={Movies}/>
+        <Route path='/movies/:imdbID' component={Movie}/>
         <Route path='/profile' component={Profile}/>
         <Route path='/signup' component={SignUp}/>
         <Route path='/signin' component={SignIn}/>

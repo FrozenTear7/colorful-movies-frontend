@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { fetchWithToken } from '../utils/fetchExtended'
 import Loading from './Loading'
 import Error from './Error'
+import { Link } from 'react-router-dom'
 
 class Profile extends Component {
   constructor (props) {
@@ -18,16 +19,15 @@ class Profile extends Component {
 
   fetchMovies () {
     this.setState({movies: {...this.state.movies, loading: true, error: null}}, () => {
-      fetchWithToken({method: 'GET'})
+      fetchWithToken('http://localhost:3001/movies', {method: 'GET'})
         .then(response => {
           return response.json()
         })
         .then(responseJson => {
-          console.log(responseJson)
-          if (responseJson.error)
-            throw responseJson.error
+          if (responseJson.Error)
+            throw responseJson.Error
 
-          this.setState({movies: {...this.state.movies, list: responseJson.movies}})
+          this.setState({movies: {...this.state.movies, list: responseJson.Result}})
         })
         .catch(error => {
           this.setState({movies: {...this.state.movies, error: error}})
@@ -62,7 +62,7 @@ class Profile extends Component {
           </thead>
           <tbody>
           {this.state.movies.list && this.state.movies.list.map((movie, index) => <tr key={index}>
-              <th scope='row'>{movie.Title}</th>
+              <th scope='row'><Link to={`/movies/${movie.imdbID}`}>{movie.Title}</Link></th>
               <td>{movie.Year}</td>
               <td>{movie.Poster && movie.Poster !== 'N/A' &&
               <img alt='Poster' src={movie.Poster} style={{width: '20%'}}/>}</td>

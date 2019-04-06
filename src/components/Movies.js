@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { fetchWithApiKey, fetchWithToken } from '../utils/fetchExtended'
+import { fetchWithApiKey } from '../utils/fetchExtended'
 import Loading from './Loading'
 import Error from './Error'
+import { Link } from 'react-router-dom'
 
 class Movies extends Component {
   constructor (props) {
@@ -17,11 +18,6 @@ class Movies extends Component {
         loading: false,
         error: null,
       },
-      addToList: {
-        imdbID: null,
-        loading: false,
-        error: null,
-      },
     }
 
     this.handleNameChange = this.handleNameChange.bind(this)
@@ -30,7 +26,10 @@ class Movies extends Component {
   }
 
   fetchMovies (searchPage) {
-    this.setState({searchPage: searchPage || this.state.searchPage, movies: {...this.state.movies, loading: true, error: null}}, () => {
+    this.setState({
+      searchPage: searchPage || this.state.searchPage,
+      movies: {...this.state.movies, loading: true, error: null},
+    }, () => {
       fetchWithApiKey({s: this.state.searchName, y: this.state.searchYear, page: this.state.searchPage})
         .then(response => {
           return response.json()
@@ -49,25 +48,6 @@ class Movies extends Component {
         })
         .finally(() => {
           this.setState({movies: {...this.state.movies, loading: false}})
-        })
-    })
-  }
-
-  addToList (id) {
-    this.setState({addToList: {...this.state.addToList, loading: true, error: null, imdbID: id}}, () => {
-      fetchWithToken({method: 'POST', body: JSON.stringify(this.state.movies.list.find(movie => movie.imdbID === id))})
-        .then(response => {
-          return response.json()
-        })
-        .then(responseJson => {
-          if (responseJson.status === 500)
-            throw responseJson.error
-        })
-        .catch(error => {
-          this.setState({addToList: {...this.state.addToList, error: error}})
-        })
-        .finally(() => {
-          this.setState({addToList: {...this.state.addToList, loading: false}})
         })
     })
   }
@@ -136,20 +116,14 @@ class Movies extends Component {
             <th scope='col'>Title</th>
             <th scope='col'>Year</th>
             <th scope='col'>Poster</th>
-            <th scope='col'>Action</th>
           </tr>
           </thead>
           <tbody>
           {this.state.movies.list && this.state.movies.list.map((movie, index) => <tr key={index}>
-              <th scope='row'>{movie.Title}</th>
+              <th scope='row'><Link to={`/movies/${movie.imdbID}`}>{movie.Title}</Link></th>
               <td>{movie.Year}</td>
               <td>{movie.Poster && movie.Poster !== 'N/A' &&
               <img alt='Poster' src={movie.Poster} style={{width: '20%'}}/>}</td>
-              <td>
-                <button className='btn btn-info' onClick={() => this.addToList(movie.imdbID)}>Add to list</button>
-                <Loading loading={this.state.addToList.loading}/>
-                <Error error={this.state.addToList.error}/>
-              </td>
             </tr>,
           )}
           </tbody>
