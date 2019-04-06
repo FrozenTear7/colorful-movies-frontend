@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Panel from './Panel'
-import Movies from './Movies'
-import NotFound from './NotFound'
-import Profile from './Profile'
-import SignUp from './SignUp'
-import SignIn from './SignIn'
-import Movie from './Movie'
+import Panel from './core/Panel'
+import Movies from './movies/Movies'
+import NotFound from './utils/NotFound'
+import Profile from './core/Profile'
+import SignUp from './auth/SignUp'
+import SignIn from './auth/SignIn'
+import Movie from './movies/Movie'
 
 class Main extends Component {
   render () {

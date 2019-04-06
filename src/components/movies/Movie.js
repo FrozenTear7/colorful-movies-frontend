@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { fetchWithApiKey, fetchWithToken } from '../utils/fetchExtended'
-import Loading from './Loading'
-import Error from './Error'
+import { fetchWithApiKey, fetchWithToken } from '../../utils/fetchExtended'
+import Loading from '../utils/Loading'
+import Error from '../utils/Error'
 import { SketchPicker } from 'react-color'
 
 class Movie extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Navbar from './Navbar'
+import Navbar from './core/Navbar'
 import Main from './Main'
 
 class App extends Component {
