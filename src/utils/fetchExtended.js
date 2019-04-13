@@ -20,7 +20,7 @@ export const fetchWithToken = (url, options) => {
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
-      'userid': '0',
+      'userid': localStorage.getItem('userId'),
     },
   })
 }
