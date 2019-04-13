@@ -76,18 +76,16 @@ class Movies extends Component {
   render () {
     return (
       <div className='container-fluid'>
-        <form onSubmit={this.handleSubmit}>
-          <div className='form-group'>
-            <label>Name:</label>
-            <input className='form-control' type='text' value={this.state.searchName} onChange={this.handleNameChange}
-                   style={{maxWidth: '50%'}}/>
-          </div>
-          <div className='form-group'>
-            <label>Year:</label>
-            <input className='form-control' type='number' value={this.state.searchYear} onChange={this.handleYearChange}
-                   style={{minWidth: '100px', maxWidth: '100px'}}/>
-          </div>
-          <input className='btn btn-primary' type='submit' value='Submit'/>
+        <form className='form-inline' onSubmit={this.handleSubmit}>
+            <input className='form-control mr-3' type='text' value={this.state.searchName}
+                   onChange={this.handleNameChange}
+                   style={{maxWidth: '50%'}}
+                   placeholder='Name'/>
+            <input className='form-control mr-3' type='number' value={this.state.searchYear}
+                   onChange={this.handleYearChange}
+                   style={{minWidth: '100px', maxWidth: '100px'}}
+                   placeholder='Year'/>
+            <input className='btn btn-primary' type='submit' value='Submit'/>
         </form>
 
         <hr/>
@@ -106,6 +104,17 @@ class Movies extends Component {
         </nav>}
 
         <MovieList movies={this.state.movies.list} loading={this.state.movies.loading} error={this.state.movies.error}/>
+
+        {this.state.movies.list && this.state.maxPages !== 1 && <nav aria-label='Page navigation example'>
+          <ul className='pagination'>
+            <li className='page-item'>
+              <button className='page-link' onClick={() => this.changePage(-1)}>Previous</button>
+            </li>
+            <li className='page-item'>
+              <button className='page-link' onClick={() => this.changePage(1)}>Next</button>
+            </li>
+          </ul>
+        </nav>}
       </div>
     )
   }

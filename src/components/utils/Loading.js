@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
+import loadingLogo from '../../images/loading.gif'
 
 class Loading extends Component {
   render () {
     return (
-      <div className="alert alert-info">
-        LOADING...
-      </div>
+      <img className='center-all' alt='Loading...' src={loadingLogo}/>
     )
   }
 }

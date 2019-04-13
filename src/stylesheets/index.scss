@@ -1,26 +1,11 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
-$light-color: #FFFFFF;
-$light-color-diff: #dee5ec;
-$light-color-success: #c5f2c7;
-$light-color-danger: rgba(255, 4, 12, 0.5);
-$light-color-info: #caedf5;
-$light-color-text: #161616;
-
-body {
-  background-color: $light-color;
-  color: $light-color-text;
-}
+$navbar-background-color: #ddffeb;
 
 .navbar {
-  background-color: $light-color-diff;
-  color: $light-color-text;
+  background-color: $navbar-background-color;
   display: flex;
   justify-content: space-between;
-}
-
-.navbar-link {
-  color: $light-color-text;
 }
 
 .navbar-block {
@@ -36,4 +21,32 @@ body {
   margin: 0 auto;
   padding: 5%;
   text-align: center;
+}
+
+.navbar-logo {
+  width: 35px;
+  height: 35px;
+  margin-top: 8%;
+  border-radius: 50%;
+}
+
+.afterimage-logo {
+  border-radius: 50%;
+}
+
+.movie-poster {
+  max-height: 250px !important;
+}
+
+.movie-poster-big {
+  max-height: 400px !important;
+  max-width: 400px !important;
+}
+
+.center-all {
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
 }

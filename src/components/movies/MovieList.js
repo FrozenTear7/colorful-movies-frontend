@@ -13,7 +13,7 @@ class MovieList extends Component {
 
     return (
       <div>
-        <table className='table'>
+        <table className='table text-center' style={{tableLayout: 'fixed'}}>
           <thead>
           <tr>
             <th scope='col'>Title</th>
@@ -22,11 +22,11 @@ class MovieList extends Component {
           </tr>
           </thead>
           <tbody>
-          {this.props.movies.map((movie, index) => <tr key={index}>
+          {this.props.movies.map((movie, index) => <tr style={{height: '300px'}} key={index}>
               <th scope='row'><Link to={`/movies/${movie.imdbID}`}>{movie.Title}</Link></th>
               <td>{movie.Year}</td>
               <td>{movie.Poster && movie.Poster !== 'N/A' &&
-              <img alt='Poster' src={movie.Poster} style={{width: '20%'}}/>}</td>
+              <img alt='Poster' src={movie.Poster} className='movie-poster'/>}</td>
             </tr>,
           )}
           </tbody>

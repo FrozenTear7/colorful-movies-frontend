@@ -4,7 +4,7 @@ class Error extends Component {
   render () {
     if (this.props.error)
       return (
-        <div className="alert alert-danger">
+        <div className="alert alert-danger center-all">
           {this.props.error}
         </div>
       )
