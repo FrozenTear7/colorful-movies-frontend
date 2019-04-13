@@ -1,7 +1,7 @@
 import config from '../config.json'
 
 export const fetchWithApiKey = (params) => {
-  let requestURL = new URL('http://www.omdbapi.com')
+  let requestURL = new URL('https://www.omdbapi.com')
 
   params = {...params, apikey: config.omdb_api_key}
 
