@@ -17,7 +17,7 @@ class Profile extends Component {
 
   fetchMovies () {
     this.setState({movies: {...this.state.movies, loading: true, error: null}}, () => {
-      fetchWithToken('http://localhost:3001/movies', {method: 'GET'})
+      fetchWithToken('https://afterimage-backend.herokuapp.com/movies', {method: 'GET'})
         .then(response => {
           return response.json()
         })

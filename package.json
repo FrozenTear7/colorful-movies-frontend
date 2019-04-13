@@ -2,8 +2,10 @@
   "name": "colorful-movies-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://afterimage-backend.herokuapp.com/",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.5",
     "react-color": "^2.17.0",
@@ -12,6 +14,8 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
