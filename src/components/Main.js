@@ -12,12 +12,12 @@ class Main extends Component {
   render () {
     return (
       <Switch>
-        <Route exact path='/' component={Panel}/>
-        <Route exact path='/movies' component={Movies}/>
-        <Route path='/movies/:imdbID' component={Movie}/>
-        <Route path='/profile' component={Profile}/>
-        <Route path='/signup' component={SignUp}/>
-        <Route path='/signin' component={SignIn}/>
+        <Route exact path='/colorful-movies-frontend/' component={Panel}/>
+        <Route exact path='/colorful-movies-frontend/movies' component={Movies}/>
+        <Route path='/colorful-movies-frontend/movies/:imdbID' component={Movie}/>
+        <Route path='/colorful-movies-frontend/profile' component={Profile}/>
+        <Route path='/colorful-movies-frontend/signup' component={SignUp}/>
+        <Route path='/colorful-movies-frontend/signin' component={SignIn}/>
         <Route component={NotFound}/>
       </Switch>
     )

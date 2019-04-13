@@ -23,7 +23,7 @@ class MovieList extends Component {
           </thead>
           <tbody>
           {this.props.movies.map((movie, index) => <tr style={{height: '300px'}} key={index}>
-              <th scope='row'><Link to={`/movies/${movie.imdbID}`}>{movie.Title}</Link></th>
+              <th scope='row'><Link to={`/colorful-movies-frontend/movies/${movie.imdbID}`}>{movie.Title}</Link></th>
               <td>{movie.Year}</td>
               <td>{movie.Poster && movie.Poster !== 'N/A' &&
               <img alt='Poster' src={movie.Poster} className='movie-poster'/>}</td>

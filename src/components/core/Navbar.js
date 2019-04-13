@@ -7,15 +7,15 @@ class Navbar extends Component {
       <div>
         <div id='navbar' className='navbar'>
           <div className='navbar-block'>
-            <a className='navbar-link' href='/'>
+            <a className='navbar-link' href={'/colorful-movies-frontend/'}>
               <img className='navbar-logo mr-3' alt='logo' src={billyLogo}/>
             </a>
-            <a className='btn navbar-link' href={'/movies'}>Rate a movie</a>
-            <a className='btn navbar-link' href={'/profile'}>Profile</a>
+            <a className='btn navbar-link' href={'/colorful-movies-frontend/movies'}>Rate a movie</a>
+            <a className='btn navbar-link' href={'/colorful-movies-frontend/profile'}>Profile</a>
           </div>
           <div className='navbar-block navbar-right'>
-            <a className='btn navbar-link' href={'/signup'}>Sign up</a>
-            <a className='btn navbar-link' href={'/signin'}>Sign in</a>
+            <a className='btn navbar-link' href={'/colorful-movies-frontend/signup'}>Sign up</a>
+            <a className='btn navbar-link' href={'/colorful-movies-frontend/signin'}>Sign in</a>
           </div>
         </div>
       </div>
