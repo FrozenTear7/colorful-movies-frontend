@@ -16,7 +16,7 @@ class Main extends Component {
         <Route exact path='/colorful-movies-frontend/' component={Panel}/>
         <PrivateRoute exact path='/colorful-movies-frontend/movies' component={Movies}/>
         <PrivateRoute path='/colorful-movies-frontend/movies/:imdbID' component={Movie}/>
-        <PrivateRoute path='/colorful-movies-frontend/profile' component={Profile}/>
+        <PrivateRoute path='/colorful-movies-frontend/users/:userid' component={Profile}/>
         <Route path='/colorful-movies-frontend/signup' component={SignUp}/>
         <Route path='/colorful-movies-frontend/signin' component={SignIn}/>
         <Route component={NotFound}/>

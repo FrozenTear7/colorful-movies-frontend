@@ -1,19 +1,9 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "fade";
+@import "navbar";
 
-$navbar-background-color: #ddffeb;
-
-.navbar {
-  background-color: $navbar-background-color;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar-block {
-  display: inline-flex;
-}
-
-.navbar-right {
-  flex-direction: row;
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
 .center-window {
@@ -38,14 +28,17 @@ $navbar-background-color: #ddffeb;
   max-height: 250px !important;
 }
 
+.modal-body {
+}
+
 .movie-poster-big {
   max-height: 400px !important;
   max-width: 400px !important;
 }
 
 .center-all {
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   margin-left: auto;
   margin-right: auto;
   position: absolute;

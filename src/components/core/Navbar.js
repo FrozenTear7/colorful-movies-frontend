@@ -11,11 +11,17 @@ class Navbar extends Component {
               <img className='navbar-logo mr-3' alt='logo' src={billyLogo}/>
             </a>
             <a className='btn navbar-link' href={'/colorful-movies-frontend/movies'}>Rate a movie</a>
-            <a className='btn navbar-link' href={'/colorful-movies-frontend/profile'}>Profile</a>
+            <a className='btn navbar-link'
+               href={`/colorful-movies-frontend/users/${localStorage.getItem('userId')}`}>Profile</a>
           </div>
           <div className='navbar-block navbar-right'>
             <a className='btn navbar-link' href={'/colorful-movies-frontend/signup'}>Sign up</a>
             <a className='btn navbar-link' href={'/colorful-movies-frontend/signin'}>Sign in</a>
+            {localStorage.getItem('userId') &&
+            <a className='btn navbar-link' href={'/colorful-movies-frontend/signin'}
+               onClick={() => localStorage.removeItem('userId')}>
+              Sign out
+            </a>}
           </div>
         </div>
       </div>

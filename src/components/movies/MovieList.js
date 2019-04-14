@@ -12,21 +12,21 @@ class MovieList extends Component {
       return <Error error={this.props.error}/>
 
     return (
-      <div>
-        <table className='table text-center' style={{tableLayout: 'fixed'}}>
+      <div className='container-fluid'>
+        <table className='table' style={{tableLayout: 'fixed'}}>
           <thead>
           <tr>
+            <th scope='col'>Poster</th>
             <th scope='col'>Title</th>
             <th scope='col'>Year</th>
-            <th scope='col'>Poster</th>
           </tr>
           </thead>
           <tbody>
           {this.props.movies.map((movie, index) => <tr style={{height: '300px'}} key={index}>
-              <th scope='row'><Link to={`/colorful-movies-frontend/movies/${movie.imdbID}`}>{movie.Title}</Link></th>
-              <td>{movie.Year}</td>
               <td>{movie.Poster && movie.Poster !== 'N/A' &&
               <img alt='Poster' src={movie.Poster} className='movie-poster'/>}</td>
+              <th scope='row'><Link to={`/colorful-movies-frontend/movies/${movie.imdbID}`}>{movie.Title}</Link></th>
+              <td>{movie.Year}</td>
             </tr>,
           )}
           </tbody>

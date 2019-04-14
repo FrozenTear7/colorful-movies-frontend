@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { fetchWithToken } from '../../utils/fetchExtended'
-import MovieList from '../movies/MovieList'
+import MovieListRatings from '../movies/MovieListRatings'
 
 class Profile extends Component {
   constructor (props) {
@@ -17,7 +17,7 @@ class Profile extends Component {
 
   fetchMovies () {
     this.setState({movies: {...this.state.movies, loading: true, error: null}}, () => {
-      fetchWithToken('https://afterimage-backend.herokuapp.com/movies', {method: 'GET'})
+      fetchWithToken(`https://afterimage-backend.herokuapp.com/users/${this.props.match.params.userid}`, {method: 'GET'})
         .then(response => {
           return response.json()
         })
@@ -25,7 +25,12 @@ class Profile extends Component {
           if (responseJson.Error)
             throw responseJson.Error
 
-          this.setState({movies: {...this.state.movies, list: responseJson.Result}})
+          this.setState({
+            movies: {
+              ...this.state.movies,
+              list: responseJson.Result,
+            },
+          })
         })
         .catch(error => {
           this.setState({movies: {...this.state.movies, error: error}})
@@ -41,13 +46,15 @@ class Profile extends Component {
   }
 
   render () {
+
     return (
       <div className='container-fluid'>
         <h1>Your profile:</h1>
 
         <h2>Movies: </h2>
 
-        <MovieList movies={this.state.movies.list} loading={this.state.movies.loading} error={this.state.movies.error}/>
+        <MovieListRatings movies={this.state.movies.list} loading={this.state.movies.loading}
+                          error={this.state.movies.error}/>
       </div>
     )
   }

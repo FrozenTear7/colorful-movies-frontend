@@ -1,0 +1,25 @@
+$navbar-text-color: #f0f0f0;
+$navbar-text-color-hover: #dddddd;
+$navbar-background-color: #111111;
+
+.navbar {
+  background-color: $navbar-background-color;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-link {
+  color: $navbar-text-color;
+}
+
+.navbar-link:hover {
+  color: $navbar-text-color-hover;
+}
+
+.navbar-block {
+  display: inline-flex;
+}
+
+.navbar-right {
+  flex-direction: row;
+}

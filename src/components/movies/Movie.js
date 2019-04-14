@@ -127,7 +127,7 @@ class Movie extends Component {
 
   colorPicker (index) {
     return (
-      <div>
+      <div className='container-fluid'>
         <button type='button' data-toggle='modal' data-target={`#ratingModal${index}`}
                 onClick={() => this.setState({editedColor: index})}
                 style={{
@@ -148,7 +148,8 @@ class Movie extends Component {
                 </button>
               </div>
               <div className='modal-body center-window'>
-                {index === this.state.editedColor && <SketchPicker color={this.state.rating.rating[index]} onChangeComplete={this.handleChangeComplete}/>}
+                {index === this.state.editedColor &&
+                <SketchPicker color={this.state.rating.rating[index]} onChangeComplete={this.handleChangeComplete}/>}
                 <br/>
               </div>
               <div className='modal-footer'>
@@ -162,7 +163,12 @@ class Movie extends Component {
   }
 
   addColor () {
-    this.setState({rating: {...this.state.rating, rating: [...this.state.rating.rating, '#FFFFFF']}})
+    this.setState({
+      rating: {
+        ...this.state.rating,
+        rating: [...this.state.rating.rating, '#FFFFFF'],
+      },
+    })
   }
 
   render () {
@@ -211,7 +217,7 @@ class Movie extends Component {
 
                 <ul className='list-inline'>
                   {this.state.rating.rating.map((color, i) => <li key={i}
-                    className='list-inline-item'>{this.colorPicker(i)}</li>)}
+                                                                  className='list-inline-item'>{this.colorPicker(i)}</li>)}
                 </ul>
               </div>
             }
