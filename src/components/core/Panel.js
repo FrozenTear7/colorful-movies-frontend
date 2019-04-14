@@ -30,7 +30,7 @@ class Panel extends Component {
             <div className='col col-4'>
               Rate a movie <br/>
               <Link className='btn-sm btn-secondary'
-                    to={`/colorful-movies-frontend/movies`}>Profile</Link>
+                    to={`/colorful-movies-frontend/movies`}>Search</Link>
             </div>
             <div className='col col-4'>
               Check other user's ratings <br/>
@@ -40,7 +40,8 @@ class Panel extends Component {
                          onChange={this.handleChange}/>
                 </div>
                 <div className='col col-4'>
-                  <Link className='btn-sm btn-secondary' to={`/colorful-movies-frontend/users/${this.state.userId}`}>Search</Link>
+                  <Link className='btn-sm btn-secondary'
+                        to={`/colorful-movies-frontend/users/${this.state.userId}`}>Search</Link>
                 </div>
               </div>
             </div>

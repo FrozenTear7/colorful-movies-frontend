@@ -12,11 +12,12 @@ class Navbar extends Component {
             </a>
             <a className='btn navbar-link' href={'/colorful-movies-frontend/movies'}>Rate a movie</a>
             <a className='btn navbar-link'
-               href={`/colorful-movies-frontend/users/${localStorage.getItem('userId')}`}>Profile</a>
+               href={`/colorful-movies-frontend/profile`}>Profile</a>
           </div>
           <div className='navbar-block navbar-right'>
-            <a className='btn navbar-link' href={'/colorful-movies-frontend/signup'}>Sign up</a>
-            <a className='btn navbar-link' href={'/colorful-movies-frontend/signin'}>Sign in</a>
+            {!localStorage.getItem('userId') &&
+            <div><a className='btn navbar-link' href={'/colorful-movies-frontend/signup'}>Sign up</a>
+              <a className='btn navbar-link' href={'/colorful-movies-frontend/signin'}>Sign in</a></div>}
             {localStorage.getItem('userId') &&
             <a className='btn navbar-link' href={'/colorful-movies-frontend/signin'}
                onClick={() => localStorage.removeItem('userId')}>

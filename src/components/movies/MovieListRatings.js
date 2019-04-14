@@ -1,16 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Loading from '../utils/Loading'
-import Error from '../utils/Error'
 
 class MovieListRatings extends Component {
   render () {
-    if (this.props.loading)
-      return <Loading/>
-
-    if (this.props.error)
-      return <Error error={this.props.error}/>
-
     return (
       <div className='container-fluid'>
         <table className='table' style={{tableLayout: 'fixed'}}>

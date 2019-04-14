@@ -1,23 +1,25 @@
 import React, { Component } from 'react'
 import { fetchWithToken } from '../../utils/fetchExtended'
 import MovieListRatings from '../movies/MovieListRatings'
+import Loading from '../utils/Loading'
+import Error from '../utils/Error'
 
 class Profile extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      movies: {
-        list: [],
-        loading: false,
-        error: null,
-      },
+      user: null,
+      movies: [],
+      ratings: [],
+      loading: false,
+      error: null,
     }
   }
 
   fetchMovies () {
-    this.setState({movies: {...this.state.movies, loading: true, error: null}}, () => {
-      fetchWithToken(`https://afterimage-backend.herokuapp.com/users/${this.props.match.params.userid}`, {method: 'GET'})
+    this.setState({loading: true, error: null}, () => {
+      fetchWithToken(`/users/${this.props.match.params.userid || localStorage.getItem('userId')}`, {method: 'GET'})
         .then(response => {
           return response.json()
         })
@@ -26,17 +28,16 @@ class Profile extends Component {
             throw responseJson.Error
 
           this.setState({
-            movies: {
-              ...this.state.movies,
-              list: responseJson.Result,
-            },
+            movies: responseJson.Result.movies,
+            user: responseJson.Result.user,
+            ratings: responseJson.Result.ratings,
           })
         })
         .catch(error => {
-          this.setState({movies: {...this.state.movies, error: error}})
+          this.setState({error: error})
         })
         .finally(() => {
-          this.setState({movies: {...this.state.movies, loading: false}})
+          this.setState({loading: false})
         })
     })
   }
@@ -46,15 +47,22 @@ class Profile extends Component {
   }
 
   render () {
+    if (this.state.loading)
+      return <Loading/>
+
+    if (this.state.error)
+      return <Error error={this.state.error}/>
 
     return (
       <div className='container-fluid'>
-        <h1>Your profile:</h1>
+        <h1>{this.state.user.name} {this.state.user.surname}</h1>
+        <h3>{this.state.user.email}</h3>
+
+        <hr/>
 
         <h2>Movies: </h2>
 
-        <MovieListRatings movies={this.state.movies.list} loading={this.state.movies.loading}
-                          error={this.state.movies.error}/>
+        <MovieListRatings movies={this.state.movies}/>
       </div>
     )
   }

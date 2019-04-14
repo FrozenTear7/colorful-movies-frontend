@@ -13,7 +13,7 @@ export const fetchWithApiKey = (params) => {
 }
 
 export const fetchWithToken = (url, options) => {
-  let requestURL = new URL(url)
+  let requestURL = new URL('http://localhost:3001' + url)
 
   return fetch(requestURL, {
     ...options,

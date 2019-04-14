@@ -46,7 +46,7 @@ class Movie extends Component {
 
   fetchRating () {
     this.setState({rating: {...this.state.rating, loading: true, error: null}}, () => {
-      fetchWithToken(`https://afterimage-backend.herokuapp.com/movies/${this.props.match.params.imdbID}`, {method: 'GET'})
+      fetchWithToken(`/movies/${this.props.match.params.imdbID}`, {method: 'GET'})
         .then(response => {
           return response.json()
         })
@@ -68,7 +68,7 @@ class Movie extends Component {
 
   addRating () {
     this.setState({rating: {...this.state.rating, loading: true, error: null}}, () => {
-      fetchWithToken(`https://afterimage-backend.herokuapp.com/movies/${this.props.match.params.imdbID}`, {
+      fetchWithToken(`/movies/${this.props.match.params.imdbID}`, {
         method: 'PUT',
         body: JSON.stringify({...this.state.movie.movie, Colors: this.state.rating.rating}),
       })
@@ -90,7 +90,7 @@ class Movie extends Component {
 
   deleteRating () {
     this.setState({rating: {...this.state.rating, loading: true, error: null}}, () => {
-      fetchWithToken(`https://afterimage-backend.herokuapp.com/movies/${this.props.match.params.imdbID}`, {
+      fetchWithToken(`/movies/${this.props.match.params.imdbID}`, {
         method: 'DELETE',
       })
         .then(response => {
