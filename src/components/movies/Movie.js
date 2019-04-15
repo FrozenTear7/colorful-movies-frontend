@@ -16,7 +16,7 @@ class Movie extends Component {
         error: null,
       },
       rating: {
-        rating: ['#FFFFFF'],
+        rating: [],
         loading: false,
         error: null,
       },
@@ -55,7 +55,16 @@ class Movie extends Component {
             throw responseJson.Error
 
           if (responseJson.Result)
-            this.setState({rating: {...this.state.rating, rating: responseJson.Result}})
+            this.setState({
+              rating: {
+                ...this.state.rating, rating: responseJson.Result.map((rating, i) => {
+                  return {
+                    color: rating,
+                    id: i,
+                  }
+                }),
+              },
+            })
         })
         .catch(error => {
           this.setState({rating: {...this.state.rating, error: error}})
@@ -70,7 +79,7 @@ class Movie extends Component {
     this.setState({rating: {...this.state.rating, loading: true, error: null}}, () => {
       fetchWithToken(`/movies/${this.props.match.params.imdbID}`, {
         method: 'PUT',
-        body: JSON.stringify({...this.state.movie.movie, Colors: this.state.rating.rating}),
+        body: JSON.stringify({...this.state.movie.movie, Colors: this.state.rating.rating.map(color => color.color)}),
       })
         .then(response => {
           return response.json()
@@ -100,7 +109,7 @@ class Movie extends Component {
           if (responseJson.Error)
             throw responseJson.Error
 
-          this.setState({rating: {...this.state.rating, rating: ['#FFFFFF']}})
+          this.setState({rating: {...this.state.rating, rating: []}})
         })
         .catch(error => {
           this.setState({rating: {...this.state.rating, error: error}})
@@ -115,7 +124,10 @@ class Movie extends Component {
     this.setState({
       rating: {
         ...this.state.rating,
-        rating: this.state.rating.rating.map((color, i) => (i === this.state.editedColor) ? newColor.hex : color),
+        rating: this.state.rating.rating.map(color => (color.id === this.state.editedColor) ? {
+          color: newColor.hex,
+          id: color.id,
+        } : color),
       },
     })
   }
@@ -125,34 +137,44 @@ class Movie extends Component {
     this.fetchRating()
   }
 
-  colorPicker (index) {
+  colorPicker (color) {
     return (
       <div className='container-fluid'>
-        <button type='button' data-toggle='modal' data-target={`#ratingModal${index}`}
-                onClick={() => this.setState({editedColor: index})}
+        <button type='button' data-toggle='modal' data-target={`#ratingModal${color.id}`}
+                onClick={() => this.setState({editedColor: color.id})}
                 style={{
                   width: '50px',
                   height: '50px',
-                  backgroundColor: this.state.rating.rating[index],
+                  backgroundColor: color.color,
                   borderColor: '#000000',
+                  borderRadius: '50%',
                 }}/>
 
-        <div className='modal fade' id={`ratingModal${index}`} tabIndex='-1' role='dialog'
-             aria-labelledby={`ratingModalLabel${index}`} aria-hidden='true'>
+        <div className='modal fade' id={`ratingModal${color.id}`} tabIndex='-1' role='dialog'
+             aria-labelledby={`ratingModalLabel${color.id}`} aria-hidden='true'>
           <div className='modal-dialog' role='document'>
             <div className='modal-content'>
               <div className='modal-header'>
-                <h5 className='modal-title' id={`ratingModalLabel${index}`}>Rating</h5>
+                <h5 className='modal-title' id={`ratingModalLabel${color.id}`}>Rating</h5>
                 <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
                   <span aria-hidden='true'>&times;</span>
                 </button>
               </div>
               <div className='modal-body center-window'>
-                {index === this.state.editedColor &&
-                <SketchPicker color={this.state.rating.rating[index]} onChangeComplete={this.handleChangeComplete}/>}
+                {color.id === this.state.editedColor &&
+                <SketchPicker color={color.color} onChangeComplete={this.handleChangeComplete}/>}
                 <br/>
               </div>
               <div className='modal-footer'>
+                <button type='button' className='btn btn-danger' data-dismiss='modal' onClick={() => {
+                  this.setState({
+                    rating: {
+                      ...this.state.rating,
+                      rating: this.state.rating.rating.filter(arrayColor => arrayColor.id !== color.id),
+                    },
+                  })
+                }}>Remove color
+                </button>
                 <button type='button' className='btn btn-secondary' data-dismiss='modal'>Close</button>
               </div>
             </div>
@@ -166,7 +188,7 @@ class Movie extends Component {
     this.setState({
       rating: {
         ...this.state.rating,
-        rating: [...this.state.rating.rating, '#FFFFFF'],
+        rating: [...this.state.rating.rating, {id: this.state.rating.rating.length, color: '#FFFFFF'}],
       },
     })
   }
@@ -208,7 +230,7 @@ class Movie extends Component {
             <h1>Rating:</h1><br/>
 
             {this.state.rating.loading ? <Loading loading={this.state.rating.loading}/> :
-              this.state.rating.loading ? <Error error={this.state.rating.error}/> : <div>
+              this.state.rating.error ? <Error error={this.state.rating.error}/> : <div>
                 <button className='btn btn-info mr-2' onClick={() => this.addColor()}>Add new color</button>
                 <button className='btn btn-primary mr-2' onClick={() => this.addRating()}>Save ratings</button>
                 <button className='btn btn-danger mr-2' onClick={() => this.deleteRating()}>Delete rating</button>
@@ -216,8 +238,8 @@ class Movie extends Component {
                 <hr/>
 
                 <ul className='list-inline'>
-                  {this.state.rating.rating.map((color, i) => <li key={i}
-                                                                  className='list-inline-item'>{this.colorPicker(i)}</li>)}
+                  {this.state.rating.rating.map(color => <li key={color.id}
+                                                             className='list-inline-item'>{this.colorPicker(color)}</li>)}
                 </ul>
               </div>
             }

@@ -16,13 +16,11 @@ class Navbar extends Component {
           </div>
           <div className='navbar-block navbar-right'>
             {!localStorage.getItem('userId') &&
-            <div><a className='btn navbar-link' href={'/colorful-movies-frontend/signup'}>Sign up</a>
-              <a className='btn navbar-link' href={'/colorful-movies-frontend/signin'}>Sign in</a></div>}
+            <div><button className='btn btn-primary' onClick={() => localStorage.setItem('userId', '0')}>Sign in</button></div>}
             {localStorage.getItem('userId') &&
-            <a className='btn navbar-link' href={'/colorful-movies-frontend/signin'}
-               onClick={() => localStorage.removeItem('userId')}>
+            <button className='btn btn-danger' onClick={() => localStorage.removeItem('userId')}>
               Sign out
-            </a>}
+            </button>}
           </div>
         </div>
       </div>

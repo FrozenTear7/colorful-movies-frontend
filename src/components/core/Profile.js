@@ -9,9 +9,7 @@ class Profile extends Component {
     super(props)
 
     this.state = {
-      user: null,
       movies: [],
-      ratings: [],
       loading: false,
       error: null,
     }
@@ -21,6 +19,7 @@ class Profile extends Component {
     this.setState({loading: true, error: null}, () => {
       fetchWithToken(`/users/${this.props.match.params.userid || localStorage.getItem('userId')}`, {method: 'GET'})
         .then(response => {
+
           return response.json()
         })
         .then(responseJson => {
@@ -28,9 +27,7 @@ class Profile extends Component {
             throw responseJson.Error
 
           this.setState({
-            movies: responseJson.Result.movies,
-            user: responseJson.Result.user,
-            ratings: responseJson.Result.ratings,
+            movies: responseJson.Result,
           })
         })
         .catch(error => {
@@ -55,11 +52,6 @@ class Profile extends Component {
 
     return (
       <div className='container-fluid'>
-        <h1>{this.state.user.name} {this.state.user.surname}</h1>
-        <h3>{this.state.user.email}</h3>
-
-        <hr/>
-
         <h2>Movies: </h2>
 
         <MovieListRatings movies={this.state.movies}/>

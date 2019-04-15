@@ -31,6 +31,7 @@ class MovieListRatings extends Component {
                               height: '50px',
                               backgroundColor: color,
                               borderColor: '#000000',
+                              borderRadius: '50%'
                             }}/>
                   </li>)}
                 </ul>
