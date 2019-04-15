@@ -1,16 +1,16 @@
 {
-  "main.css": "/colorful-movies-frontend/static/css/main.ecf5dcf2.chunk.css",
-  "main.js": "/colorful-movies-frontend/static/js/main.c4744a98.chunk.js",
-  "main.js.map": "/colorful-movies-frontend/static/js/main.c4744a98.chunk.js.map",
+  "main.css": "/colorful-movies-frontend/static/css/main.c21bf37d.chunk.css",
+  "main.js": "/colorful-movies-frontend/static/js/main.8b33495f.chunk.js",
+  "main.js.map": "/colorful-movies-frontend/static/js/main.8b33495f.chunk.js.map",
   "runtime~main.js": "/colorful-movies-frontend/static/js/runtime~main.243cfbed.js",
   "runtime~main.js.map": "/colorful-movies-frontend/static/js/runtime~main.243cfbed.js.map",
   "static/css/2.f04eeece.chunk.css": "/colorful-movies-frontend/static/css/2.f04eeece.chunk.css",
   "static/js/2.780b1baa.chunk.js": "/colorful-movies-frontend/static/js/2.780b1baa.chunk.js",
   "static/js/2.780b1baa.chunk.js.map": "/colorful-movies-frontend/static/js/2.780b1baa.chunk.js.map",
   "index.html": "/colorful-movies-frontend/index.html",
-  "precache-manifest.dfc37217c8bc2c8a36fc8f08edc1f422.js": "/colorful-movies-frontend/precache-manifest.dfc37217c8bc2c8a36fc8f08edc1f422.js",
+  "precache-manifest.c110efdac23cb02a6a647ed782a0ae26.js": "/colorful-movies-frontend/precache-manifest.c110efdac23cb02a6a647ed782a0ae26.js",
   "service-worker.js": "/colorful-movies-frontend/service-worker.js",
   "static/css/2.f04eeece.chunk.css.map": "/colorful-movies-frontend/static/css/2.f04eeece.chunk.css.map",
-  "static/css/main.ecf5dcf2.chunk.css.map": "/colorful-movies-frontend/static/css/main.ecf5dcf2.chunk.css.map",
+  "static/css/main.c21bf37d.chunk.css.map": "/colorful-movies-frontend/static/css/main.c21bf37d.chunk.css.map",
   "static/media/billy.jpg": "/colorful-movies-frontend/static/media/billy.93e54ba9.jpg"
 }
