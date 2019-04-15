@@ -3,6 +3,7 @@ import { fetchWithApiKey, fetchWithToken } from '../../utils/fetchExtended'
 import Loading from '../utils/Loading'
 import Error from '../utils/Error'
 import { SketchPicker } from 'react-color'
+import { Button, OverlayTrigger, Popover } from 'react-bootstrap'
 
 class Movie extends Component {
   constructor (props) {
@@ -139,47 +140,29 @@ class Movie extends Component {
 
   colorPicker (color) {
     return (
-      <div className='container-fluid'>
-        <button type='button' data-toggle='modal' data-target={`#ratingModal${color.id}`}
-                onClick={() => this.setState({editedColor: color.id})}
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  backgroundColor: color.color,
-                  borderColor: '#000000',
-                  borderRadius: '50%',
-                }}/>
-
-        <div className='modal fade' id={`ratingModal${color.id}`} tabIndex='-1' role='dialog'
-             aria-labelledby={`ratingModalLabel${color.id}`} aria-hidden='true'>
-          <div className='modal-dialog' role='document'>
-            <div className='modal-content'>
-              <div className='modal-header'>
-                <h5 className='modal-title' id={`ratingModalLabel${color.id}`}>Rating</h5>
-                <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
-                  <span aria-hidden='true'>&times;</span>
-                </button>
-              </div>
-              <div className='modal-body center-window'>
-                {color.id === this.state.editedColor &&
-                <SketchPicker color={color.color} onChangeComplete={this.handleChangeComplete}/>}
-                <br/>
-              </div>
-              <div className='modal-footer'>
-                <button type='button' className='btn btn-danger' data-dismiss='modal' onClick={() => {
-                  this.setState({
-                    rating: {
-                      ...this.state.rating,
-                      rating: this.state.rating.rating.filter(arrayColor => arrayColor.id !== color.id),
-                    },
-                  })
-                }}>Remove color
-                </button>
-                <button type='button' className='btn btn-secondary' data-dismiss='modal'>Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div>
+        <OverlayTrigger trigger='click' placement='bottom' rootClose={true} overlay={
+          <Popover id='popover-basic' title='Change rating'>
+            <SketchPicker color={color.color} onChangeComplete={this.handleChangeComplete}/>
+            <button type='button' className='btn btn-danger' data-dismiss='modal' onClick={() => {
+              this.setState({
+                rating: {
+                  ...this.state.rating,
+                  rating: this.state.rating.rating.filter(arrayColor => arrayColor.id !== color.id),
+                },
+              })
+            }}>Remove color
+            </button>
+          </Popover>
+        }>
+          <Button variant='success' onClick={() => this.setState({editedColor: color.id})} style={{
+            width: '50px',
+            height: '50px',
+            backgroundColor: color.color,
+            borderColor: '#000000',
+            borderRadius: '50%',
+          }}/>
+        </OverlayTrigger>
       </div>
     )
   }

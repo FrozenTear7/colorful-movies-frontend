@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d2eb4f3e-8407-4407-9edb-ab1d237929e7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/core/Panel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/core/Panel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/movies/Movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/movies/Movie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/movies/MovieList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/movies/MovieList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/movies/MovieListRatings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/movies/MovieListRatings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/Loading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/utils/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/utils/NotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/fade.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/fade.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/fetchExtended.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/fetchExtended.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,41 +23,11 @@
       <file leaf-file-name="Movie.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/movies/Movie.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="243" column="11" selection-start-line="243" selection-start-column="11" selection-end-line="243" selection-end-column="11" />
+            <state relative-caret-position="523">
+              <caret line="157" column="90" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="90" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Panel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/core/Panel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Movies.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/movies/Movies.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/stylesheets/index.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -77,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="ReactComponent" />
         <option value="JavaScript File" />
+        <option value="ReactComponent" />
       </list>
     </option>
   </component>
@@ -97,7 +57,6 @@
       <find>deanery-frontend</find>
       <find>modal</find>
       <find>omdb</find>
-      <find>&quot;</find>
       <find>fetch</find>
       <find>Link</find>
       <find>container</find>
@@ -114,6 +73,7 @@
       <find>console.</find>
       <find>&lt;table</find>
       <find>img</find>
+      <find>&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>container-fluid</replace>
@@ -159,11 +119,12 @@
         <option value="$PROJECT_DIR$/src/utils/fetchExtended.js" />
         <option value="$PROJECT_DIR$/src/components/utils/NotFound.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/fade.scss" />
-        <option value="$PROJECT_DIR$/src/components/core/Panel.js" />
         <option value="$PROJECT_DIR$/src/components/movies/MovieList.js" />
         <option value="$PROJECT_DIR$/src/stylesheets/index.scss" />
         <option value="$PROJECT_DIR$/src/components/movies/MovieListRatings.js" />
         <option value="$PROJECT_DIR$/src/components/utils/Loading.js" />
+        <option value="$PROJECT_DIR$/src/components/movies/Example.js" />
+        <option value="$PROJECT_DIR$/src/components/core/Panel.js" />
         <option value="$PROJECT_DIR$/src/components/movies/Movie.js" />
       </list>
     </option>
@@ -345,7 +306,7 @@
       <workItem from="1555166311264" duration="3992000" />
       <workItem from="1555237572435" duration="6834000" />
       <workItem from="1555313713294" duration="4077000" />
-      <workItem from="1555320449804" duration="8702000" />
+      <workItem from="1555320449804" duration="10282000" />
     </task>
     <task id="LOCAL-00001" summary="Cleanup after initial build">
       <created>1553453362065</created>
@@ -480,11 +441,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555320958077</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add proper responsive styling">
+      <created>1555332025831</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1555332025831</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75879000" />
+    <option name="totallyTimeSpent" value="77459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -541,7 +509,8 @@
     <MESSAGE value="Add authorization checks" />
     <MESSAGE value="Add sign in without check + minor changes" />
     <MESSAGE value="Add better functionality of ratings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add better functionality of ratings" />
+    <MESSAGE value="Add proper responsive styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add proper responsive styling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -549,13 +518,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/utils/fetchExtended.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -837,13 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/core/Panel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/movies/Movies.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -854,10 +809,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/movies/Example.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/core/Panel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/movies/Movie.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="243" column="11" selection-start-line="243" selection-start-column="11" selection-end-line="243" selection-end-column="11" />
+        <state relative-caret-position="523">
+          <caret line="157" column="90" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="90" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
