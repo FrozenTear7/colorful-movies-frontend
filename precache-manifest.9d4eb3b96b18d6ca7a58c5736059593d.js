@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "b5d53509e7009d6a81d1",
+    "revision": "6d82208e84e972512a1c",
     "url": "/colorful-movies-frontend/static/css/main.ea0a3daf.chunk.css"
   },
   {
-    "revision": "b5d53509e7009d6a81d1",
-    "url": "/colorful-movies-frontend/static/js/main.7dcfe076.chunk.js"
+    "revision": "6d82208e84e972512a1c",
+    "url": "/colorful-movies-frontend/static/js/main.e4c96404.chunk.js"
   },
   {
     "revision": "0e5cecbb4b3062620479",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/colorful-movies-frontend/static/media/billy.93e54ba9.jpg"
   },
   {
-    "revision": "54f869ea2a63fa3282d40cbf8a87b3c0",
+    "revision": "bb51bc18b15ab071aba178e1d838cb7e",
     "url": "/colorful-movies-frontend/index.html"
   }
 ];
