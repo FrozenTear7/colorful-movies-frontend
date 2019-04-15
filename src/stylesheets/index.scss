@@ -1,0 +1,42 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "fade";
+@import "navbar";
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.center-window {
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 5%;
+  text-align: center;
+}
+
+.navbar-logo {
+  width: 35px;
+  height: 35px;
+  margin-top: 8%;
+  border-radius: 50%;
+}
+
+.afterimage-logo {
+  border-radius: 50%;
+}
+
+.movie-poster {
+  max-height: 250px !important;
+}
+
+.movie-poster-big {
+  max-height: 400px !important;
+  max-width: 400px !important;
+}
+
+.center-all {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+}
