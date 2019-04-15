@@ -8,6 +8,7 @@
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.5",
+    "react-bootstrap": "^1.0.0-beta.8",
     "react-color": "^2.17.0",
     "react-dom": "^16.8.5",
     "react-router-dom": "^5.0.0",

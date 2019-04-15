@@ -19,34 +19,29 @@ class Panel extends Component {
 
   render () {
     return (
-      <div className="container-fluid center-window welcome-fade">
-        <h2>Welcome to Afterimage!</h2> <br/>
-        <img className='afterimage-logo mr-3' alt='logo' src={billyLogo}/>
+      <div className="container-fluid" style={{textAlign: 'center'}}>
+        <div className='welcome-fade'>
+          <h2>Welcome to Afterimage!</h2> <br/>
+          <img className='afterimage-logo mr-3' alt='logo' src={billyLogo}/>
+        </div>
 
         {localStorage.getItem('userId') && <div>
           <br/>
           <hr/>
           <div className='row'>
             <div className='col col-4'>
-              Rate a movie <br/>
+              Movies <br/>
               <Link className='btn-sm btn-secondary'
                     to={`/colorful-movies-frontend/movies`}>Search</Link>
             </div>
             <div className='col col-4'>
-              Check other user's ratings <br/>
-              <div className='row'>
-                <div className='col col-8'>
-                  <input type='text' className='form-control' id='inputPassword' placeholder='User id'
-                         onChange={this.handleChange}/>
-                </div>
-                <div className='col col-4'>
-                  <Link className='btn-sm btn-secondary'
-                        to={`/colorful-movies-frontend/users/${this.state.userId}`}>Search</Link>
-                </div>
-              </div>
+              Check user <br/>
+              <input type='text' className='form-control' placeholder='Id' onChange={this.handleChange}/>
+              <Link className='btn-sm btn-secondary'
+                    to={`/colorful-movies-frontend/users/${this.state.userId}`}>Search</Link>
             </div>
             <div className='col col-4'>
-              Check your profile <br/>
+              Profile <br/>
               <Link className='btn-sm btn-secondary'
                     to={`/colorful-movies-frontend/users/${localStorage.getItem('userId')}`}>Profile</Link>
             </div>

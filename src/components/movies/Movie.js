@@ -205,35 +205,18 @@ class Movie extends Component {
     return (
       <div className='container-fluid'>
         <div className='row'>
-          <div className='col col-8'>
-
-            <div className='row'>
-              <div className='col col-4'>
-                <img className='movie-poster-big' alt='Poster' src={this.state.movie.movie.Poster}/>
-              </div>
-              <div className='col col-8'>
-                <h1>{this.state.movie.movie.Title}</h1>
-                <h2>Released: {this.state.movie.movie.Released}</h2>
-                <h2>Runtime: {this.state.movie.movie.Runtime}</h2>
-              </div>
-            </div>
-            <hr/>
-            <h3>Director: {this.state.movie.movie.Director}</h3>
-            <h3>Writer: {this.state.movie.movie.Writer}</h3>
-            <h3>Actors: {this.state.movie.movie.Actors}</h3>
-            <hr/>
-            <h5>Plot: {this.state.movie.movie.Plot}</h5>
-            <h4>Awards: {this.state.movie.movie.Awards}</h4>
-            <h4>IMDB rating: {this.state.movie.movie.imdbRating}</h4>
+          <div className='col'>
+            <img className='img-thumbnail' alt='Poster' src={this.state.movie.movie.Poster}
+                 style={{minWidth: '200px', minHeight: '200px'}}/>
           </div>
-          <div className='col col-4'>
-            <h1>Rating:</h1><br/>
+          <div className='col'>
+            <b>Rating:</b>
 
             {this.state.rating.loading ? <Loading loading={this.state.rating.loading}/> :
               this.state.rating.error ? <Error error={this.state.rating.error}/> : <div>
-                <button className='btn btn-info mr-2' onClick={() => this.addColor()}>Add new color</button>
-                <button className='btn btn-primary mr-2' onClick={() => this.addRating()}>Save ratings</button>
-                <button className='btn btn-danger mr-2' onClick={() => this.deleteRating()}>Delete rating</button>
+                <button className='btn-sm btn-info mr-2' onClick={() => this.addColor()}>+</button>
+                <button className='btn-sm btn-primary mr-2' onClick={() => this.addRating()}>Save</button>
+                <button className='btn-sm btn-danger mr-2' onClick={() => this.deleteRating()}>Delete</button>
 
                 <hr/>
 
@@ -245,6 +228,20 @@ class Movie extends Component {
             }
           </div>
         </div>
+        <br/> <br/>
+        <h1>{this.state.movie.movie.Title}</h1>
+        <hr/>
+        <h3>Released: {this.state.movie.movie.Released} </h3>
+        <h3>Runtime: {this.state.movie.movie.Runtime} </h3>
+        <hr/>
+        <h4><b>Director:</b> {this.state.movie.movie.Director} </h4>
+        <h4><b>Writer:</b> {this.state.movie.movie.Writer} </h4>
+        <h4><b>Actors:</b> {this.state.movie.movie.Actors}</h4>
+        <hr/>
+        <h5><b>Plot: </b> {this.state.movie.movie.Plot}</h5>
+        <hr/>
+        <h4><b>Awards:</b> {this.state.movie.movie.Awards} </h4>
+        <h4><b>IMDB rating:</b> {this.state.movie.movie.imdbRating}</h4>
       </div>
     )
   }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import loadingLogo from '../../images/loading.gif'
+import { Spinner } from 'react-bootstrap'
 
 class Loading extends Component {
   render () {
     return (
-      <img className='center-all' alt='Loading...' src={loadingLogo}/>
+      <Spinner className='center-all' animation="border"/>
     )
   }
 }
