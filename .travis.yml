@@ -8,6 +8,7 @@ cache:
   - "$HOME/.npm"
 scripts:
   - npm run build
+  - echo "npm test temporarily disabled"
 deploy:
   provider: pages
   skip_cleanup: true
