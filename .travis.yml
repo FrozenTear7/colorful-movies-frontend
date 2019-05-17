@@ -8,12 +8,11 @@ cache:
   - "$HOME/.npm"
 script:
   - npm run build
-before_deploy:
-  - cd build
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $github_token
   keep_history: true
+  local_dir: build
   on:
     branch: master
