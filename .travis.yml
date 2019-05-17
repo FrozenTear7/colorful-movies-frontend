@@ -7,11 +7,13 @@ cache:
   directories:
   - "$HOME/.npm"
 script:
-  - npm run deploy
-#deploy:
-#  provider: pages
-#  skip_cleanup: true
-#  github_token: $github_token
-#  keep_history: true
-#  on:
-#    branch: master
+  - npm run build
+before_deploy:
+  - cd build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  keep_history: true
+  on:
+    branch: master
