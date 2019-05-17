@@ -6,7 +6,7 @@ install:
 cache:
   directories:
   - "$HOME/.npm"
-before_deploy:
+scripts:
   - npm run build
 deploy:
   provider: pages
