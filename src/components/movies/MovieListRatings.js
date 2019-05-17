@@ -10,17 +10,15 @@ class MovieListRatings extends Component {
           <tr>
             <th scope='col'>Poster</th>
             <th scope='col'>Title</th>
-            <th scope='col'>Year</th>
             <th scope='col'>Ratings</th>
           </tr>
           </thead>
           <tbody>
           {this.props.movies.map((record, index) => <tr style={{height: '300px'}} key={index}>
               <td>{record.movie.Poster && record.movie.Poster !== 'N/A' &&
-              <img alt='Poster' src={record.movie.Poster} className='movie-poster'/>}</td>
+              <img alt='Poster' src={record.movie.Poster} className='img-fluid'/>}</td>
               <th scope='row'><Link
                 to={`/colorful-movies-frontend/movies/${record.movie.imdbID}`}>{record.movie.Title}</Link></th>
-              <td>{record.movie.Year}</td>
               <td>
                 <ul className='list-inline'>
                   {record.ratings.Colors.map((color, i) => <li key={i}

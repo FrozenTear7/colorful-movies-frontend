@@ -5,7 +5,7 @@ class NotFound extends Component {
     return (
       <div className="container-fluid center-window">
         <h1>Page not found!</h1>
-        <img src="https://i.kym-cdn.com/entries/icons/original/000/001/420/977.jpg" alt="404"/>
+        <img src="https://i.kym-cdn.com/entries/icons/original/000/001/420/977.jpg" alt="404"  style={{width: '100%', height: 'auto'}}/>
       </div>
     )
   }
