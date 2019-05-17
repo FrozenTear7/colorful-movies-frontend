@@ -1,15 +1,12 @@
 language: node_js
 node_js:
-- 11.12.0
+  - 11.12.0
 install:
-- npm ci
+  - npm ci
 cache:
   directories:
   - "$HOME/.npm"
-scripts:
+script:
   - npm run deploy
 deploy:
-  provider: pages
-  skip_cleanup: true
   github_token: $github_token
-  local_dir: build
