@@ -6,6 +6,8 @@ install:
 cache:
   directories:
   - "$HOME/.npm"
+scripts:
+  - npm run build
 deploy:
   provider: pages
   skip_cleanup: true
