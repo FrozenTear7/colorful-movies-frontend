@@ -33,8 +33,6 @@ class Movies extends Component {
                     return response.json()
                 })
                 .then(responseJson => {
-                    console.log(responseJson)
-
                     if (responseJson.Response === 'False')
                         throw responseJson.Error
 
