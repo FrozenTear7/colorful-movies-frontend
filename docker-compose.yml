@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  afterimage-frontend:
+    build: .
+    command: npm start
+    volumes:
+      - .:/usr/afterimage-frontend
+      - /usr/node_modules
+    ports:
+      - "3000:3000"
