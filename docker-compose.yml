@@ -6,6 +6,6 @@ services:
     command: npm start
     volumes:
       - .:/usr/afterimage-frontend
-      - /usr/node_modules
+      - /usr/afterimage-frontend/node_modules
     ports:
       - "3000:3000"
