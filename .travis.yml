@@ -14,3 +14,4 @@ deploy:
   skip_cleanup: true
   github_token: $github_token
   keep_history: true
+  local_dir: build
