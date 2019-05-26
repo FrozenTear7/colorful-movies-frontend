@@ -16,8 +16,7 @@ let browser
 let page
 
 beforeAll(async () => {
-    browser = await puppeteer.launch(
-        {
+    browser = await puppeteer.launch({
             headless: false,
             slowMo: 250,
         },
@@ -43,8 +42,6 @@ describe('404 Page', () => {
 
         const title = await page.$eval('.container-fluid h1', e => e.innerHTML)
         expect(title).toBe('Page not found!')
-
-        browser.close()
     }, 9000000)
 })
 
