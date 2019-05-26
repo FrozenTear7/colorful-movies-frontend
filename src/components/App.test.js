@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer')
 
-const appUrlBase = 'http://localhost:3000/colorful-movies-frontend/'
+const appUrlBase = 'http://localhost:3000/colorful-movies-frontend'
 const routes = {
     public: {
-        panel: `${appUrlBase}`,
+        panel: `${appUrlBase}/`,
         noMatch: `${appUrlBase}/404test`,
     },
     private: {
@@ -17,7 +17,7 @@ let page
 
 beforeAll(async () => {
     browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             slowMo: 250,
         },
     )
