@@ -6,7 +6,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "react": "^16.8.5",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-color": "^2.17.0",
@@ -15,12 +15,11 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
-    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest --runInBand"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +29,12 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "jest-puppeteer": "^3.9.0",
+    "puppeteer": "^1.17.0"
+  }
 }
