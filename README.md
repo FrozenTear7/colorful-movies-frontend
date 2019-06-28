@@ -14,6 +14,7 @@ Note that Linux, macOS and Windows vary in installation process.
 npm start
 ```
 while in root directory of the app - same for both frontend and backend.
+
 2) Docker: if you wish you can run the app from a docker container using docker-compose files located in the root
 directory of the app - same for both frontend and backend.
 
