@@ -16,7 +16,9 @@ class Profile extends Component {
   }
 
   fetchMovies () {
+    console.log(localStorage.getItem('userId'))
     this.setState({loading: true, error: null}, () => {
+      console.log('fetching user movies from ' + localStorage.getItem('userId'))
       fetchWithToken(`/users/${this.props.match.params.userid || localStorage.getItem('userId')}`, {method: 'GET'})
         .then(response => {
 
